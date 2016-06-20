@@ -69,11 +69,8 @@
 #ifdef DLIB_HAVE_SSE41
     #include <smmintrin.h> // SSE4
 #endif
-#ifdef DLIB_HAVE_AVX
-    #include <immintrin.h> // AVX
-#endif
-#ifdef DLIB_HAVE_AVX2
-    #include <avx2intrin.h>
+#if defined(DLIB_HAVE_AVX) || defined(DLIB_HAVE_AVX2)
+    #include <immintrin.h> // AVX and avx2
 #endif
 
 #endif // DLIB_SIMd_CHECK_Hh_
